@@ -1,0 +1,52 @@
+<div class="container">
+    <br>
+  
+    <div class="Titulo">
+      <h1>Docentes En Comision Administrativa</h1><br>
+    </div>
+  
+    <br>
+  
+    <div class="table-container">
+      <table class="table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Identificacion</th>
+            <th scope="col">Primer Nombre</th>
+            <th scope="col">Primer Apellido</th>
+            <th scope="col">Cargo</th>
+            <th scope="col">Detalles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let docente of docentes">
+            <td>{{docente.id}}</td>
+            <td>{{docente.identificacion}}</td>
+            <td>{{docente.primerNombre}}</td>
+            <td>{{docente.primerApellido}}</td>
+            <td>{{docente.cargo}}</td>
+            <td><button (click)="open(docente)"><span><i class="far fa-eye"></i></span></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <br><br>
+  </div>
+
+  
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Asignar Calificadores</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger mb-1 mr-1" (click)="modal.close('Close click')">Cancelar</button>
+    </div>
+  </ng-template>

@@ -1,0 +1,24 @@
+input{
+    text-align: right;
+}
+
+.y{
+    text-align: right;
+     
+}
+.x{
+    text-align: left;
+}
+
+.w{
+    background: transparent;
+    border: none;
+}
+
+.form-control{
+    margin-bottom: 20px;
+}
+
+i{
+   padding: 5px;
+}

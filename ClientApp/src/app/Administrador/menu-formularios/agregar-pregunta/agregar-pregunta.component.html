@@ -1,0 +1,45 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <body>
+    <br>
+    <div class="container">
+
+      <div class="Titulo">
+        <h1>Agregar Nueva Pregunta</h1><br>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-12 mb-1">
+          <label for="validationServer01">Digite la pregunta que desea agregar:</label>
+          <input [(ngModel)]="pregunta.descripcion" type="text" class="form-control" placeholder="Pregunta"
+            formControlName="descripcion" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }">
+
+          <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+            <div *ngIf="f.descripcion.errors.required">Este Campo Es Requerido</div>
+          </div>
+        </div>
+      </div>
+        <br>
+      <div class="form-row">
+        <label for="inputState">Categoria</label>
+        
+        <select [(ngModel)]="pregunta.categoria" formControlName="categoria" readonly class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.categoria.errors }">
+          <option selected>RESPONSABILIDAD</option>
+          <option>PUNTUALIDAD Y CUMPLIMIENTO</option>
+          <option>EFICIENCIA</option>
+          <option>RELACIONES INTERPERSONALES</option>
+        </select>
+
+        <div *ngIf="submitted && f.categoria.errors" class="invalid-feedback">
+            <div *ngIf="f.categoria.errors.required">Este Campo Es Requerido</div>
+        </div>
+      </div>
+
+      <br>
+
+      <button class="btn btn-primary">Agregar</button>
+    </div>
+  </body>
+</form>

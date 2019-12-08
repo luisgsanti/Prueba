@@ -1,0 +1,17 @@
+table {
+  padding: 10px;
+}
+
+
+.table-container {
+  overflow-x: auto;
+}
+
+th,td {
+  padding: 10px;
+}
+
+button{
+  background: transparent;
+  border: none;
+}

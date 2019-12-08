@@ -1,0 +1,185 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <body>
+    <br>
+    <div class="container">
+
+      <div class="Titulo">
+        <h1>Registrar Nuevo Docente</h1><br>
+      </div>
+      <div>
+        <h1>Datos Personales</h1><br>
+      </div>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label>* Identificacion:</label>
+          <input [(ngModel)]="docente.identificacion" type="text"
+            formControlName="identificacion" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.identificacion.errors }" placeholder="Identificacion">
+
+          <div *ngIf="submitted && f.identificacion.errors" class="invalid-feedback">
+            <div *ngIf="f.identificacion.errors.required">Este Campo Es Requerido</div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label>* Primer Nombre: </label>
+          <input [(ngModel)]="docente.primerNombre" type="text"
+            formControlName="primerNombre" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.primerNombre.errors }" placeholder="Primer Nombre">
+
+          <div *ngIf="submitted && f.primerNombre.errors" class="invalid-feedback">
+            <div *ngIf="f.primerNombre.errors.required">Este Campo Es Requerido</div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label>Segundo Nombre</label>
+          <input [(ngModel)]="docente.segundoNombre" [ngModelOptions]="{standalone: true}" type="text"
+            class="form-control" placeholder="Segundo Nombre">
+        </div>
+
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label>* Primer Apellido</label>
+          <input [(ngModel)]="docente.primerApellido"  type="text"
+            formControlName="primerApellido" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.primerApellido.errors }" placeholder="Primer Apellido">
+
+          <div *ngIf="submitted && f.primerApellido.errors" class="invalid-feedback">
+            <div *ngIf="f.primerApellido.errors.required">Este Campo Es Requerido</div>
+          </div>
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label>Segundo Apellido</label>
+          <input [(ngModel)]="docente.segundoApellido" [ngModelOptions]="{standalone: true}" type="text"
+            class="form-control" placeholder="Segundo Apellido">
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label>* Correo Electronico</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+
+            <input [(ngModel)]="docente.correo" type="text"
+              aria-describedby="inputGroupPrepend3" formControlName="correo" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" placeholder="Correo">
+
+            <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+              <div *ngIf="f.correo.errors.required">Este Campo Es Requerido</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputState">* Genero</label>
+          <select [(ngModel)]="docente.genero" formControlName="genero"
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.genero.errors }">
+            <option selected> MASCULINO </option>
+            <option>FEMENINO</option>
+          </select>
+
+          <div *ngIf="submitted && f.genero.errors" class="invalid-feedback">
+            <div *ngIf="f.genero.errors.required">Este Campo Es Requerido</div>
+          </div>
+        </div>
+
+        <!-- 
+        <div class="col-md-4 mb-3">
+            <label for="validationServer05">Telefono</label>
+            <input [(ngModel)]="docente.telefono" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer05" placeholder="Telefono">
+        </div> 
+            
+        <div class="col-md-4 mb-3">
+            <label for="validationServer03">Fecha De Nacimiento</label>
+            <input  [(ngModel)]="docente.fechaNacimiento" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer03" placeholder="Fecha De Nacimiento">
+        </div>
+        -->
+
+      </div>
+
+      <br><br>
+      <div>
+        <h2>Datos Academicos</h2><br>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputState">* Cargo</label>
+          <select [(ngModel)]="docente.cargo" class="form-control"
+            formControlName="cargo" [ngClass]="{ 'is-invalid': submitted && f.cargo.errors }">
+            <option selected>DOCENTE</option>
+            <option>DOCENTE EN COMISION ADMINISTRATIVA</option>
+          </select>
+
+          <div *ngIf="submitted && f.cargo.errors" class="invalid-feedback">
+            <div *ngIf="f.cargo.errors.required">Este Campo Es Requerido</div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="inputState">* Programa </label>
+          <select [(ngModel)]="docente.programa" class="form-control"
+            formControlName="programa" [ngClass]="{ 'is-invalid': submitted && f.programa.errors }">
+            <option selected>MÚSICA</option>
+            <option>LICENCIATURA EN ARTE</option>
+            <option>LICENCIATURA EN MATEMÁTICAS</option>
+            <option>LICENCIATURA EN ESPAÑOL E INGLES</option>
+            <option>LICENCIATURA EN EDUCACIÓN FÍSICA</option>
+            <option>LICENCIATURA EN CIENCIAS NATURALES</option>
+            <option>MICROBIOLOGÍA</option>
+            <option>INSTRUMENTACIÓN QUIRÚRGICA</option>
+            <option>ENFERMERÍA</option>
+            <option>DERECHO</option>
+            <option>PSICOLOGÍA</option>
+            <option>SOCIOLOGÍA</option>
+            <option>INGENIERÍA AMBIENTAL Y SANITARIA</option>
+            <option>INGENIERÍA DE SISTEMAS</option>
+            <option>INGENIERÍA ELECTRÓNICA</option>
+            <option>INGENIERÍA AGROINDUSTRIAL</option>
+            <option>COMERCIO INTERNACIONAL</option>
+            <option>ECONOMÍA</option>
+            <option>ADMINISTRACIÓN DE EMPRESAS</option>
+            <option>CONTADURÍA PÚBLICA</option>
+          </select>
+
+          <div *ngIf="submitted && f.programa.errors" class="invalid-feedback">
+            <div *ngIf="f.programa.errors.required">Este Campo Es Requerido</div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="inputState">* Facultad</label>
+          <select [(ngModel)]="docente.facultad" class="form-control"
+            formControlName="facultad" [ngClass]="{ 'is-invalid': submitted && f.facultad.errors }">
+            <option selected>CIENCIAS DE LA SALUD</option>
+            <option>CIENCIAS BÁSICAS Y DE EDUCACIÓN</option>
+            <option>BELLAS ARTES</option>
+            <option>CIENCIAS ADMINISTRATIVAS CONTABLES Y ECONÓMICAS</option>
+            <option>INGENIERÍAS Y TECNOLÓGICAS</option>
+            <option>DERECHO, CIENCIAS POLÍTICAS Y SOCIALES</option>
+          </select>
+
+          <div *ngIf="submitted && f.facultad.errors" class="invalid-feedback">
+            <div *ngIf="f.facultad.errors.required">Este Campo Es Requerido</div>
+          </div>
+        </div>
+
+      </div>
+
+      <br>
+
+      <button class="btn btn-primary">Agregar</button>
+      <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancelar</button>
+      <br><br>
+    </div>
+  </body>
+</form>

@@ -1,0 +1,53 @@
+<div class="container">
+  <br>
+
+  <div class="Titulo">
+    <h1>Consultar Docentes</h1><br>
+  </div>
+
+  <br>
+  <div class="row">
+    <div class="col-6">
+      <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Type to filter">
+    </div>
+  </div>
+  <hr>
+
+  <div class="table-container">
+    <table class="table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Identificacion</th>
+          <th scope="col">Primer Nombre</th>
+          <th scope="col">Segundo Nombre</th>
+          <th scope="col">Primer Apellido</th>
+          <th scope="col">Segundo Apellido</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Cargo</th>
+          <th scope="col">Facultad</th>
+          <th scope="col">Editar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let docente of docentes | filtroDocente:searchText;">
+          <td>{{docente.id}}</td>
+          <td>{{docente.identificacion}}</td>
+          <td>{{docente.primerNombre}}</td>
+          <td>{{docente.segundoNombre}}</td>
+          <td>{{docente.primerApellido}}</td>
+          <td>{{docente.segundoApellido}}</td>
+          <td>{{docente.correo}}</td>
+          <td>{{docente.estado}}</td>
+          <td>{{docente.cargo}}</td>
+          <td>{{docente.facultad}}</td>
+          <td><a routerLink="/Adminitrador/MenuDeGestion/ModificarDocente/{{docente.id}}" class="button"><span><i
+                  class="far fa-edit"></i></span></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br><br>
+</div>

@@ -1,0 +1,14 @@
+th, td{
+    padding: 10px;
+}
+
+table{
+    width: 100%;
+}
+
+.icono{
+    border: none;
+    background: transparent;
+    width: 100%;
+}
+  

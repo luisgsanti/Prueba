@@ -1,0 +1,360 @@
+/*body {
+    background-image: url(../img/4.jpg);
+    height: 100vh;
+    background-size: cover;
+    width: 100%;
+}
+
+.contenedor{
+  width: 100%;
+  max-width: 1500;
+  overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../img/a.jpg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+        
+    width: 100vh;
+    height: 90vh;
+}
+  
+h1,a,label{
+  font-family: "Homer Simpson UI";
+}
+
+  .titulo{
+    text-align: center;
+  }
+
+
+  .login-box {
+    width: 25%;
+    height: 60%;
+    background: rgb(81, 250, 75);
+    color: rgb(5, 5, 5);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 30px;
+  }
+  
+  .login-box .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+  }
+  
+  .login-box h1 {
+    margin: 0;
+    
+    text-align: center;
+    font-size: 40px;
+    
+  }
+  
+  .login-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    
+  }
+  
+  .login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: "Homer Simpson UI";
+    
+  }
+  
+  .login-box input[type="text"], .login-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: whi;
+    font-size: 16px;
+  }
+  
+  .login-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(0, 78, 26);
+    color:white;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+  
+  .login-box input[type="submit"]:hover {
+    cursor: pointer;
+    background: white;
+    color: rgb(0, 78, 26);
+  }
+  
+  .login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: white;
+    
+  }
+  
+  .login-box a:hover {
+    color: white;
+  }
+
+  @media(max-wigth: 765px){
+    .login-box{
+      width: 80%;
+    }
+  }
+___________________________________________________________________________________________________
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background: #DEDEDE;
+    display: flex;
+    min-height: 100vh;
+    background-image: url(../img/4.jpg);
+    height: 100%;
+    background-size: cover;
+    width: 100%;
+  }
+  
+  form{
+    margin: auto;
+    width: 50%;
+    max-width: 500px;
+    background: rgb(134, 214, 28);
+    padding: 30px;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 40px;
+  }
+  h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+    font-family: "Homer Simpson UI";
+  }
+  
+  input{
+    display: block;
+    padding: 10px;
+    width: 100%;
+    margin: 30px 0;
+    font-size: 15px;
+    font-family: "Homer Simpson UI";
+  }
+  
+  input[type="submit"]{
+    background: linear-gradient(white,rgb(61, 209, 111));
+    border: 0;
+    color: black;
+    opacity: 0.8;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 0%;
+    font-family: "Homer Simpson UI";
+  }
+  
+  input[type="submit"]:hover{
+    opacity: 1;
+  }
+  
+  input[type="submit"]:active{
+    transform: scale(0.95);
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 60px;
+    left: calc(50% - 50px);
+  }
+  
+  @media (max-width:1200px){
+    form{
+      width: 40%;
+
+    }
+  }
+
+  @media (max-width:800px){
+    form{
+      width: 45%;
+    }
+  }
+  
+  @media(max-width:570px){
+    form{
+      width: 70%;
+    }
+  }
+
+  @media(max-width:400px){
+    form{
+      width: 80%;
+  }
+
+  
+}
+
+
+body {
+  background: #DEDEDE;
+  display: flex;
+  min-height: 100vh;
+  background-image: url(../img/7.jpg);
+  height: 100%;
+  background-size: cover;
+  width: 100%;
+}
+
+.login-box {
+  width: 25%;
+  height: 60%;
+  background: transparent;
+  border: rgb(0, 0, 0) 3px solid;
+  color: black;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+
+.login-box .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+  font-family: "Homer Simpson UI";
+}
+
+label {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  font-family: "Homer Simpson UI";
+}
+
+input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.login-box input[type="text"], .login-box input[type="password"] {
+  border: none;
+  border-bottom: 1px solid black;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+  width: 100%;
+  font-family: "Homer Simpson UI";
+}
+
+input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #b80f22;
+  color: #fff;
+  font-size: 22px;
+  border-radius: 20px;
+  font-family: "Homer Simpson UI";
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+}
+
+input[type="submit"]:active {
+  transform: scale(0.95);
+}
+
+@media (max-width:1100px) {
+  .login-box {
+    width: 30%;
+
+  }
+}
+
+@media (max-width:930px) {
+  .login-box {
+    width: 35%;
+  }
+}
+
+@media(max-width:750px) {
+  .login-box {
+    width: 40%;
+  }
+}
+
+@media(max-width:650px) {
+  .login-box {
+    width: 50%;
+  }
+}
+
+@media(max-width:550px) {
+  .login-box {
+    width: 60%;
+  }
+}
+
+@media(max-width:450px) {
+  .login-box {
+    width: 70%;
+  }
+}
+
+@media(max-width:350px) {
+  .login-box {
+    width: 90%;
+  }
+}*/
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-image: url(../img/7.jpg);
+  height: 100%;
+  background-size: cover;
+  width: 100%;
+}

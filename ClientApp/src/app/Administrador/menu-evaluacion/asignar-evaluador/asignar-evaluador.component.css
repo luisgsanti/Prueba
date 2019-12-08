@@ -1,0 +1,39 @@
+.Titulo {
+    text-align: center;
+    color: blue
+  }
+
+button{
+  background: transparent;
+  border: none;
+}
+
+label{
+  color: rgb(12, 17, 61);
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  display: block;
+}
+
+h1, a{
+color: rgb(12, 17, 61)
+}
+
+
+table{
+  padding: 10px;
+  width: 100%;
+}
+
+
+.table-container{
+  overflow-x: auto;
+}
+
+th, td{
+  padding: 10px;
+}
+
+
+
