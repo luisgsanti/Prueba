@@ -20,8 +20,9 @@ namespace ProyectoWeb.Controllers
             {
                 // Crea un nuevo item si la coleccion esta vacia,
                 // lo que significa que no puedes borrar todos los Items.
-                _context.Login.Add(new Login { Identificacion=1111, Usuario ="Pedro", Contraseña="qqqqq", Rol="DOCENTE"});
-                _context.Login.Add(new Login { Identificacion=2222, Usuario ="Luis", Contraseña="aaaaaa", Rol="DOCENTE EN COMISION ADMINISTRATIVA"});
+                _context.Login.Add(new Login { Identificacion=1111, Usuario ="Pedro", Clave="qqqqq", Rol="ADMINISTRADOR"});
+                _context.Login.Add(new Login { Identificacion=1111, Usuario ="Yambra", Clave="qqqqq", Rol="DOCENTE"});
+                _context.Login.Add(new Login { Identificacion=2222, Usuario ="Luis", Clave="aaaaaa", Rol="DOCENTE EN COMISION ADMINISTRATIVA"});
                 
                 _context.SaveChanges();
             }

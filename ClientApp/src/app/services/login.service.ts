@@ -34,12 +34,12 @@ export class LoginService {
 
   }
 
-  getUsuario(usuario: string): Observable<Login>
+  getUsuario(user: string): Observable<Login>
   {
-    const url = `${this.baseUrl + 'api/Login'}/${usuario}`;
+    const url = `${this.baseUrl + 'api/Login'}/${user}`;
     return this.http.get<Login>(url).pipe(
-    tap(_ => this.log(`fetched Login Usuario=${usuario}`)),
-    catchError(this.handleError<Login>(`getHero Usuario=${usuario}`))
+    tap(_ => this.log(`fetched Login Usuario=${user}`)),
+    catchError(this.handleError<Login>(`getHero Usuario=${user}`))
     );
   }
   
