@@ -5,16 +5,17 @@ import { Docente }from "../../../models/docente"
 import { ActivatedRoute } from '@angular/router';
 import { CalificadorService } from '../../../services/calificador.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDatosDocenteComponent } from '../modal-datos-docente/modal-datos-docente.component';
 import {
   DocenteServiceService
 } from '../../../services/docente.service';
 
 @Component({
-  selector: 'app-modal-asignar-jefe',
-  templateUrl: './modal-asignar-jefe.component.html',
-  styleUrls: ['./modal-asignar-jefe.component.css']
+  selector: 'app-modal-asignar-par',
+  templateUrl: './modal-asignar-par.component.html',
+  styleUrls: ['./modal-asignar-par.component.css']
 })
-export class ModalAsignarJefeComponent implements OnInit {
+export class ModalAsignarParComponent implements OnInit {
 
   calificacion: Calificaciones;
 
@@ -35,7 +36,7 @@ export class ModalAsignarJefeComponent implements OnInit {
   add(calificador: string) {
     this.calificacion.id_DocenteCalificado = this.docente.identificacion;
     this.calificacion.id_Calificador = calificador;
-    this.calificacion.tipo_Calificador = "JEFE";
+    this.calificacion.tipo_Calificador = "PAR";
     this.calificadorService.add(this.calificacion)
       .subscribe();
   }

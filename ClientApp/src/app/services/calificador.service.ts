@@ -20,7 +20,7 @@ export class CalificadorService {
   /** POST: add a new task to the server */
   add(calificaciones: Calificaciones): Observable<Calificaciones> {
     return this.http.post<Calificaciones>(this.baseUrl+'api/Calificacion', calificaciones, httpOptions).pipe(
-      tap((newCalificadocion: Calificaciones) => this.log(`Calificador agregado`)),
+      tap(/*(newCalificadocion: Calificaciones) => this.log(`Calificador agregado`)*/),
       catchError(this.handleError<Calificaciones>('AddCalificador'))
     )
   }

@@ -28,11 +28,11 @@ namespace ProyectoWeb
             /*services.AddDbContext<DocenteContext>(opt =>
             opt.UseInMemoryDatabase("DocenteBD"));*/
 
-            services.AddDbContext<DocenteContext>(opt =>
-            opt.UseSqlServer(@"Server=.\;Database=ZolddickDB1;Trusted_Connection=True;"));
-
             //services.AddDbContext<DocenteContext>(opt =>
-            //opt.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=ZolddickDB;Trusted_Connection=true;"));
+            //opt.UseSqlServer(@"Server=.\;Database=ZolddickDB1;Trusted_Connection=True;"));
+
+            services.AddDbContext<DocenteContext>(opt =>
+            opt.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=ZolddickDB;Trusted_Connection=true;"));
 
             services.AddControllersWithViews();
             services.AddSwaggerDocument();

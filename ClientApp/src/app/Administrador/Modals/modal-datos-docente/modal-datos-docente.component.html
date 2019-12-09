@@ -1,8 +1,5 @@
 <div class="modal-header">
   <h4 class="modal-title">Asignar Calificadores</h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-    <span aria-hidden="true">&times;</span>
-  </button>
 </div>
 
 <div class="modal-body">
@@ -24,26 +21,28 @@
     </div>
   </div>
 
-  <div calss="form-row">
-    <div>
-        <button class="form-control" (click)="open(docente)"><span><i class="fas fa-user-plus"></i></span>JEFE CALIFICADOR:</button>
-      <div *ngFor="let calificacion of calificaciones">
+
+  <div class="form-row">
+    <div class="col-md-6 mb-2">
+      <div class="form-row">
+        <button (click)="open(docente)"><span><i class="fas fa-user-plus"></i></span></button>
+        <label class="y">JEFE CALIFICADOR:</label>
+      </div>
+      <div class="col-md-10 mb-2" *ngFor="let calificacion of calificaciones">
         <input readonly *ngIf="calificacion.tipo_Calificador==='JEFE'" class="form-control" type="text"
           [(ngModel)]="calificacion.id_Calificador">
       </div>
-      
     </div>
-    <div>
-        <button class="form-control"><span><i class="fas fa-user-plus"></i></span>PAR CALIFICADOR:</button>
-      <div *ngFor="let calificacion of calificaciones">
+    <div class="col-md-6 mb-2">
+      <div class="form-row">
+        <button (click)="open2(docente)"><span><i class="fas fa-user-plus"></i></span></button>
+        <label class="y">PAR CALIFICADOR:</label>
+      </div>
+      <div class="col-md-10 mb-2" *ngFor="let calificacion of calificaciones">
         <input readonly *ngIf="calificacion.tipo_Calificador==='PAR'" class="form-control" type="text"
           [(ngModel)]="calificacion.id_Calificador">
       </div>
-      
     </div>
   </div>
-</div>
 
-<div class="modal-footer">
-  <button type="button" class="btn btn-danger mb-1 mr-1" (click)="activeModal.close('Close click')">Cerrar</button>
 </div>

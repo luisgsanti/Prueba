@@ -44,8 +44,6 @@ export class BarraDeNavegacionComponent implements OnInit {
 
     if(this.log != null){
       this.authService.login(this.log.Usuario, this.log.Contraseña ,this.log.Rol);
-    }else{
-      this.authService.login('no','no','no');
     }
 
   }

@@ -1,11 +1,12 @@
 <div class="modal-header">
-  <h4 class="modal-title">Asignar Jefe</h4>
+  <h4 class="modal-title">Asignar Par</h4>
+
 </div>
 
 <div class="modal-body">
-  <div >
+  <div>
     <div class="col-6">
-    <label>Filtrar</label>
+      <label>Filtrar</label>
       <input [(ngModel)]="searchText" type="text" class="form-control">
     </div>
   </div>
@@ -27,11 +28,10 @@
           <td>{{docente.primerApellido}}</td>
           <td>{{docente.cargo}}</td>
 
-          <td><button class="icono" (click)="add(docente.identificacion)" onclick="location.reload()"><span><i class="far fa-check-circle"></i></span></button></td>
+          <td><button class="icono" (click)="add(docente.identificacion)" onclick="location.reload()"><span><i
+                  class="far fa-check-circle"></i></span></button></td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
-
-

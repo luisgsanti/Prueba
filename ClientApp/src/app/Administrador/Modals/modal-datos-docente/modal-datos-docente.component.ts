@@ -7,6 +7,7 @@ import { CalificadorService } from '../../../services/calificador.service';
 import { Location } from '@angular/common';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalAsignarJefeComponent} from "../../Modals/modal-asignar-jefe/modal-asignar-jefe.component";
+import { ModalAsignarParComponent} from "../../Modals/modal-asignar-par/modal-asignar-par.component";
 
 
 @Component({
@@ -38,6 +39,9 @@ export class ModalDatosDocenteComponent implements OnInit {
     modalRef.componentInstance.docente = docente;
   }
 
-  
+  open2(docente:Docente){
+    const modalRef2 = this.modalService.open(ModalAsignarParComponent, { size: 'lg' });
+    modalRef2.componentInstance.docente = docente;
+  }
 
 }

@@ -30,6 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FiltroDocentePipe } from './Filtros/filtro-docente.pipe';
 import { ModalDatosDocenteComponent } from './Administrador/Modals/modal-datos-docente/modal-datos-docente.component';
 import { ModalAsignarJefeComponent } from './Administrador/Modals/modal-asignar-jefe/modal-asignar-jefe.component';
+import { ModalAsignarParComponent } from './Administrador/Modals/modal-asignar-par/modal-asignar-par.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ModalAsignarJefeComponent } from './Administrador/Modals/modal-asignar-
     AsignarEvaluadorComponent,
     FiltroDocentePipe,
     ModalDatosDocenteComponent,
-    ModalAsignarJefeComponent
+    ModalAsignarJefeComponent,
+    ModalAsignarParComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -73,7 +75,9 @@ import { ModalAsignarJefeComponent } from './Administrador/Modals/modal-asignar-
     providers: [],
     bootstrap: [AppComponent],
     entryComponents: [
-      ModalDatosDocenteComponent
+      ModalDatosDocenteComponent,
+      ModalAsignarJefeComponent,
+      ModalAsignarParComponent
     ]
 })
 export class AppModule { }
