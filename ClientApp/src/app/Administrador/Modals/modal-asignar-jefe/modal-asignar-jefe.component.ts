@@ -34,8 +34,7 @@ export class ModalAsignarJefeComponent implements OnInit {
 
   add(calificador: string) {
     this.calificacion.id_DocenteCalificado = this.docente.identificacion;
-    this.calificacion.id_Calificador = calificador;
-    this.calificacion.tipo_Calificador = "JEFE";
+    this.calificacion.id_Par = calificador;
     this.calificadorService.add(this.calificacion)
       .subscribe();
   }

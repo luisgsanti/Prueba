@@ -60,9 +60,9 @@ export class AgregarDocentesComponent implements OnInit {
       .subscribe();
     if(this.docente.cargo == "DOCENTE EN COMISION ADMINISTRATIVA"){
       this.calificacion.id_DocenteCalificado = this.docente.identificacion; 
-      this.calificacion.tipo_Calificador="AUTOEVALUACION"
       this.calificadorService.add(this.calificacion).subscribe();
     }
+    
     
   }
 

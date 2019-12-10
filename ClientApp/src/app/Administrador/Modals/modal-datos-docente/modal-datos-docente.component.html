@@ -29,8 +29,8 @@
         <label class="y">JEFE CALIFICADOR:</label>
       </div>
       <div class="col-md-10 mb-2" *ngFor="let calificacion of calificaciones">
-        <input readonly *ngIf="calificacion.tipo_Calificador==='JEFE'" class="form-control" type="text"
-          [(ngModel)]="calificacion.id_Calificador">
+        <input readonly class="form-control" type="text"
+          [(ngModel)]="calificacion.id_Jefe">
       </div>
     </div>
     <div class="col-md-6 mb-2">
@@ -39,8 +39,8 @@
         <label class="y">PAR CALIFICADOR:</label>
       </div>
       <div class="col-md-10 mb-2" *ngFor="let calificacion of calificaciones">
-        <input readonly *ngIf="calificacion.tipo_Calificador==='PAR'" class="form-control" type="text"
-          [(ngModel)]="calificacion.id_Calificador">
+        <input readonly class="form-control" type="text"
+          [(ngModel)]="calificacion.id_Par">
       </div>
     </div>
   </div>

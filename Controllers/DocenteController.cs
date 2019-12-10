@@ -60,6 +60,11 @@ namespace ProyectoWeb.Controllers
         [HttpPost]
         public async Task<ActionResult<Docente>> PostTaskItem(Docente item)
         {
+            var docente = await _context.Docentes.FindAsync(item.Id);
+            if (docente != null)
+            {
+                return NotFound();
+            }
             item.Estado="ACTIVO";
             _context.Docentes.Add(item);
             await _context.SaveChangesAsync();

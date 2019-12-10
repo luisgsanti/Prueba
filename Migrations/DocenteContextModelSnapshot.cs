@@ -25,27 +25,33 @@ namespace ProyectoWeb.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Estado_Califiacador")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Fecha_Calificacion")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Id_Calificador")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Id_DocenteCalificado")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Nota")
+                    b.Property<string>("Id_Jefe")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id_Par")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Nota_Auto")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Nota_Jefe")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Nota_Par")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Observaciones")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Tipo_Calificador")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("Promedio")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -112,7 +118,7 @@ namespace ProyectoWeb.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Contraseña")
+                    b.Property<string>("Clave")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

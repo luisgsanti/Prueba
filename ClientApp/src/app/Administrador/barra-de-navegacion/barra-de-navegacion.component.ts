@@ -4,6 +4,8 @@ import { AuthService } from '../../services/auth.service';
 import { LoginService } from '../../services/login.service';
 import { ActivatedRoute } from'@angular/router';
 import { Login } from 'src/app/models/login';
+import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 
 declare var JQuery:any;
 declare var $:any;
@@ -35,16 +37,38 @@ export class BarraDeNavegacionComponent implements OnInit {
 
   constructor(private authorizeService: AuthService, private authService: AuthService, private loginService:LoginService, private route: ActivatedRoute) { }
 
-  log:Login;
+  logg: Observable<Login>;
+  aux: Login;
+  private clientes = new Subject<Login>();
+  
 
-  getUsuario(): void {
 
+  pipa(){
+    this.aux = new Login();
     var user = "Pedro";
-    this.loginService.getUsuario(user).subscribe(aux => {this.log = aux });
-   
+    this.loginService.getUsuario(user).subscribe(login => {
 
-    if(this.log != null){
-      this.authService.login(this.log.Usuario, this.log.Clave ,this.log.Rol);
+      console.log(login);
+      if (login != null) {
+        this.aux.Usuario = login.Usuario;
+        this.aux.Identificacion = login.Identificacion;
+      }
+    });
+
+    alert(this.aux.Usuario);
+    alert( this.aux.Identificacion);
+  }
+
+
+  getUsuario(usuario: string): void {
+    
+    var user = "Pedro";
+    this.loginService.getUsuario(user).subscribe( aux => this.aux = aux);
+    alert(usuario);
+    alert(this.aux);
+
+    if(this.aux != null){
+      this.authService.login(this.aux.Usuario, this.aux.Clave ,this.aux.Rol);
     }
   }
 
@@ -120,6 +144,7 @@ export class BarraDeNavegacionComponent implements OnInit {
 
   ngOnInit() { 
     this.activar();
+
   }
 
 }

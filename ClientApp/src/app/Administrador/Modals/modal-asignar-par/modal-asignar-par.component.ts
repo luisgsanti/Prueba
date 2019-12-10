@@ -26,18 +26,17 @@ export class ModalAsignarParComponent implements OnInit {
   docentes: Docente[];
   ngOnInit() {
     this.getAll();
-    this.calificacion = new Calificaciones();
   }
 
   getAll() {
     this.docenteservice.getAll().subscribe(docentes => this.docentes = docentes);
   }
 
-  add(calificador: string) {
+  update(calificador: string) {
+    
     this.calificacion.id_DocenteCalificado = this.docente.identificacion;
-    this.calificacion.id_Calificador = calificador;
-    this.calificacion.tipo_Calificador = "PAR";
-    this.calificadorService.add(this.calificacion)
+    this.calificacion.id_Par = calificador;
+    this.calificadorService.update(this.calificacion)
       .subscribe();
   }
 }

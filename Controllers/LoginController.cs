@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using ProyectoWeb.Models;
 
+using System;
+using Microsoft.AspNetCore.Http;
+
 namespace ProyectoWeb.Controllers
 {
     [Route("api/[controller]")]
@@ -13,6 +16,9 @@ namespace ProyectoWeb.Controllers
     public class LoginController : ControllerBase
     {
         private readonly DocenteContext _context;
+        private List<Login> _logins;
+
+
         public LoginController(DocenteContext context)
         {
             _context = context;
@@ -35,6 +41,15 @@ namespace ProyectoWeb.Controllers
         return await _context.Login.ToListAsync();
         }
 
+/*
+        [HttpGet("{usuario}")]
+        public Login Get (string usuario){
+            return _logins.FirstOrDefault(t=>t.Usuario == usuario);
+        }
+*/
+
+
+ 
         // GET: api/Login/5
         [HttpGet("{usuario}")]
         public async Task<ActionResult<Login>> GetTaskItem(string usuario)
@@ -56,13 +71,13 @@ namespace ProyectoWeb.Controllers
         }
 
         // POST: api/Login
-        [HttpPost]
+        /*[HttpPost]
         public async Task<ActionResult<Login>> PostTaskItem(Login item)
         {
             _context.Login.Add(item);
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetTaskItem), new { id = item.Id }, item);
-        }
+        }*/
 
         // PUT: api/Login/5
         [HttpPut("{id}")]
